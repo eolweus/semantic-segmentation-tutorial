@@ -3,6 +3,9 @@ import torchvision
 from dataset import CarvanaDataset
 from torch.utils.data import DataLoader
 
+import os
+import shutil
+
 
 """
     TODO: check Aladdin Perssons videos on this stuff
@@ -59,6 +62,31 @@ def get_loaders(
     )
 
     return train_loader, val_loader
+
+
+# def get_loaders_reduced_ds(
+#     train_dir,
+#     train_maskdir,
+#     val_dir,
+#     val_maskdir,
+#     batch_size,
+#     train_transform,
+#     val_transform,
+#     num_workers=4,
+#     pin_memory=True,
+#     num_files=200,
+#     train_dir_reduced="data/train_images_reduced/",
+# ):
+#     if not os.path.exists(train_dir_reduced):
+#         os.mkdir(train_dir_reduced)
+
+#     if len(os.listdir(train_dir_reduced)) > num_files:
+#         all_files = os.listdir(train_dir)
+#         reduced_files = os.listdir(train_dir_reduced)
+#         for idx in num_files:
+#             file_name = all_files[idx]
+#             if file_name not in reduced_files:
+            
 
 
 def check_accuracy(loader, model, device="cuda"):
