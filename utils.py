@@ -71,7 +71,7 @@ def check_accuracy(loader, model, device="cuda"):
         for x, y in loader:
             x = x.to(device)        # TODO: find out exactly what this stuff is
             y = y.to(device).unsqueeze(1)
-            preds = torch.sigmoid(model(x))     # TODO: ehhhmm....
+            preds = torch.sigmoid(model(x))
             preds = (preds > 0.5).float()
             num_correct += (preds == y).sum()
             num_pixels += torch.numel(preds)
