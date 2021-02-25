@@ -2,3 +2,4 @@ __pycache__
 *.vscode
 **/data
 saved_images
+my_checkpoint.pth.tar
